@@ -2,7 +2,6 @@
 
 A modern web implementation of the classic dice game Perudo (also known as Liar's Dice), built with React and TypeScript.
 
-![Perudo Game](public/game-preview.png)
 
 ## 🎲 About the Game
 
