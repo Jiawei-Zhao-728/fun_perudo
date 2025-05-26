@@ -1,0 +1,206 @@
+PERUDO GAME IMPLEMENTATION PLAN
+=============================
+
+PHASE 1: PROJECT SETUP & BASIC STRUCTURE
+---------------------------------------
+[ Done ] Initialize React project with Vite
+[ Done ] Set up project structure
+    ├── src/
+    │   ├── components/
+    │   ├── hooks/
+    │   ├── context/
+    │   ├── utils/
+    │   └── assets/
+[ Done ] Install core dependencies
+    ├── React
+    ├── Material-UI
+    ├── Framer Motion
+    ├── Howler.js
+    └── Tailwind CSS
+[ Done ] Set up basic routing
+[ Done ] Create theme configuration
+
+PHASE 2: CORE GAME MECHANICS
+---------------------------
+[ ] Implement basic game state management
+    ├── Player state
+    ├── AI players state
+    ├── Game round state
+    └── Betting state
+[ ] Create dice system
+    ├── Dice component
+    ├── Roll mechanics
+    ├── Dice display
+    └── Animation effects
+[ ] Implement betting system
+    ├── Bet interface
+    ├── Bet validation
+    ├── Bet history
+    └── Special rules (斋, 飞斋)
+[ ] Create turn management
+    ├── Player turns
+    ├── AI turns
+    ├── Turn transitions
+    └── Round management
+
+PHASE 3: POINTS & BANKING SYSTEM
+-------------------------------
+[ ] Implement points system
+    ├── Points tracking
+    ├── Betting with points
+    ├── Win/loss calculations
+    └── Points display
+[ ] Create bank system
+    ├── Loan management
+    ├── Transaction history
+    ├── Risk management
+    └── Bank interface
+[ ] Add special features
+    ├── Loan tiers
+    ├── Repayment tracking
+    ├── Credit system
+    └── Bankruptcy protection
+
+PHASE 4: AI IMPLEMENTATION
+-------------------------
+[ ] Create AI base logic
+    ├── Decision making
+    ├── Bet evaluation
+    ├── Risk assessment
+    └── Challenge logic
+[ ] Implement AI personalities
+    ├── Conservative AI
+    ├── Aggressive AI
+    ├── Balanced AI
+    └── Personality traits
+[ ] Add AI learning
+    ├── Pattern recognition
+    ├── Strategy adaptation
+    ├── Player behavior analysis
+    └── Difficulty levels
+
+PHASE 5: UI/UX IMPLEMENTATION
+----------------------------
+[ ] Design game board
+    ├── Layout structure
+    ├── Player positions
+    ├── Dice display
+    └── Betting area
+[ ] Create betting interface
+    ├── Bet controls
+    ├── Challenge button
+    ├── Special rules interface
+    └── Bet history display
+[ ] Implement bank interface
+    ├── Points display
+    ├── Loan management
+    ├── Transaction history
+    └── Risk indicators
+[ ] Add game controls
+    ├── Settings menu
+    ├── Rules display
+    ├── Help system
+    └── Game options
+
+PHASE 6: ANIMATIONS & EFFECTS
+----------------------------
+[ ] Implement dice animations
+    ├── Roll effects
+    ├── Reveal animations
+    ├── 3D transformations
+    └── Physics-based movements
+[ ] Add game transitions
+    ├── Round transitions
+    ├── Turn changes
+    ├── Phase shifts
+    └── State changes
+[ ] Create feedback effects
+    ├── Win/loss animations
+    ├── Special hand effects
+    ├── Challenge animations
+    └── Bank transaction effects
+[ ] Add sound effects
+    ├── Dice rolling
+    ├── Betting sounds
+    ├── Win/loss sounds
+    └── Background music
+
+PHASE 7: SPECIAL RULES IMPLEMENTATION
+-----------------------------------
+[ ] Implement 斋 (Zhai) rule
+    ├── Rule logic
+    ├── UI indicators
+    ├── State management
+    └── AI adaptation
+[ ] Add 飞斋 (Double Fei Zhai)
+    ├── Counter mechanics
+    ├── UI feedback
+    ├── State tracking
+    └── AI decision making
+[ ] Create 豹子 (Bao Zi) system
+    ├── Detection logic
+    ├── Special handling
+    ├── UI effects
+    └── AI recognition
+
+PHASE 8: TESTING & OPTIMIZATION
+------------------------------
+[ ] Unit testing
+    ├── Game logic
+    ├── AI behavior
+    ├── State management
+    └── Rule implementation
+[ ] Integration testing
+    ├── Component interaction
+    ├── State flow
+    ├── Rule interactions
+    └── AI integration
+[ ] Performance optimization
+    ├── Animation performance
+    ├── State updates
+    ├── Memory management
+    └── Load times
+[ ] User testing
+    ├── Game flow
+    ├── UI/UX
+    ├── Rule clarity
+    └── AI behavior
+
+PHASE 9: POLISH & RELEASE
+------------------------
+[ ] Final UI polish
+    ├── Visual consistency
+    ├── Animation refinement
+    ├── Sound balance
+    └── Responsive design
+[ ] Documentation
+    ├── Code documentation
+    ├── User guide
+    ├── Rule explanation
+    └── API documentation
+[ ] Deployment
+    ├── Build optimization
+    ├── Environment setup
+    ├── Deployment pipeline
+    └── Monitoring setup
+
+IMPLEMENTATION PRIORITY
+----------------------
+1. Core game mechanics (Phase 2)
+2. Basic UI implementation (Phase 5)
+3. Points system (Phase 3)
+4. AI basic implementation (Phase 4)
+5. Special rules (Phase 7)
+6. Animations (Phase 6)
+7. Polish and testing (Phases 8 & 9)
+
+TECHNICAL CONSIDERATIONS
+-----------------------
+- Use React Context for state management
+- Implement custom hooks for game logic
+- Use CSS modules for styling
+- Implement proper error boundaries
+- Add loading states and fallbacks
+- Ensure mobile responsiveness
+- Implement proper TypeScript types
+- Add proper logging and monitoring 

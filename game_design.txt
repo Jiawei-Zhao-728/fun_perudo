@@ -1,0 +1,172 @@
+PERUDO GAME DESIGN DOCUMENT
+=========================
+
+1. GAME STRUCTURE
+----------------
+- Single player vs AI opponents (5 - 7 AI players)
+- Each player starts with 5 dice
+- Points system for betting
+- Bank system for loans
+
+2. CORE GAME MECHANICS
+---------------------
+Game Flow:
+├── Setup
+│   ├── Player starts with 1000 points
+│   ├── Choose number of AI opponents (2-3)
+│   └── Each player gets 5 dice
+│
+├── Round Structure
+│   ├── Player's Turn
+│   │   ├── View own dice
+│   │   ├── Make a bet (quantity + face value)
+│   │   └── Pass to next player
+│   │
+│   ├── AI Turns
+│   │   ├── AI makes decision based on:
+│   │   │   ├── Their dice
+│   │   │   ├── Previous bets
+│   │   │   └── Personality type
+│   │   └── Can either:
+│   │       ├── Raise the bet
+│   │       └── Call "dudo" (challenge)
+│   │
+│   └── Resolution
+│       ├── If "dudo" called:
+│       │   ├── Reveal all dice
+│       │   ├── Count actual dice
+│       │   └── Determine winner
+│       └── Loser loses one die
+│
+└── Game End
+    ├── When a player loses all dice
+    └── Calculate final points
+
+3. BETTING SYSTEM
+----------------
+Betting Rules:
+├── Each bet consists of:
+│   ├── Quantity (how many dice)
+│   └── Face value (1-6)
+│
+├── Betting Options:
+│   ├── Raise quantity
+│   ├── Raise face value
+│   └── Call "dudo"
+│
+└── Special Rules:
+    ├── 1s are wild (count as any number)
+    ├── Can't bet lower than previous bet
+    └── Must either raise or challenge
+
+4. POINTS & BANKING SYSTEM
+-------------------------
+Economy System:
+├── Points
+│   ├── Starting: 1000 points
+│   ├── Betting amounts: 50-500 points
+│   └── Win/loss multipliers
+│
+├── Bank Features
+│   ├── Loan tiers: 500, 1000, 2000
+│   ├── 0% interest
+│   ├── 5-round repayment
+│   └── One loan at a time
+│
+└── Risk Management
+    ├── Can't go below 0 points
+    ├── Must have enough points to bet
+    └── Loan repayment tracking
+
+5. AI PERSONALITIES
+------------------
+AI Types:
+├── Conservative
+│   ├── Takes fewer risks
+│   ├── Challenges more often
+│   └── Makes safer bets
+│
+├── Aggressive
+│   ├── Takes more risks
+│   ├── Makes higher bets
+│   └── Challenges less often
+│
+└── Balanced
+    ├── Adapts to situation
+    ├── Mix of strategies
+    └── Medium risk level
+
+6. UI/UX DESIGN
+--------------
+Interface Elements:
+├── Game Board
+│   ├── Dice display
+│   ├── Betting interface
+│   └── Player/AI status
+│
+├── Bank Interface
+│   ├── Points display
+│   ├── Loan management
+│   └── Transaction history
+│
+└── Game Controls
+    ├── Betting controls
+    ├── Challenge button
+    └── Game settings
+
+7. IMPLEMENTATION PRIORITY
+-------------------------
+1. Basic game mechanics
+   - Dice rolling
+   - Basic betting
+   - Turn management
+
+2. Points system
+   - Basic point tracking
+   - Betting with points
+   - Win/loss calculations
+
+3. Bank system
+   - Loan management
+   - Point transactions
+   - Risk management
+
+4. AI implementation
+   - Basic AI logic
+   - Personality types
+   - Decision making
+
+5. UI/UX
+   - Game board
+   - Controls
+   - Visual feedback
+
+6. Polish
+   - Animations
+   - Sound effects
+   - Visual improvements
+
+8. TECHNICAL CONSIDERATIONS
+--------------------------
+- React for UI components
+- State management for game logic
+- Local storage for game progress
+- Responsive design for different screens
+- Performance optimization for animations
+- Error handling and edge cases 
+
+### 🀄 Additional Party Rules (飞、斋、劈、豹子)
+In party-style Perudo games (especially drinking/KTV variants), these additional mechanics may be used:
+
+- **斋 (Zhai)**: If a player calls a bid with “斋” (e.g. “3个5斋”), it means that from that point on, all dice showing `1` 
+are no longer wild — they only count as literal 1s. This increases the challenge and reduces bluffing power.
+
+- **飞斋 (Double Fei Zhai)**: To cancel a previous "斋" declaration and restore 1s as wilds, the next player must “飞斋” — this means **doubling the quantity** of the previous斋 bid while keeping the same face value.
+  - For example, if the last player bid `3个5斋`, then the next player must bid at least `6个5飞` to解除斋状态.
+  - A bid like `4个5` or `5个5` would not be enough — the斋 state would remain in effect.
+
+- **劈 (Pi)**: A drinking mechanic. If someone challenges your bet with a "劈", and you accept, you drink half a cup if you're wrong. If not accepted, the challenger drinks.
+  - Players can escalate with 反劈, doubling the drink amount.
+
+- **豹子 (Bao Zi)**: If a player rolls all the same number (e.g., five 6s), it's called a 豹子. It beats all standard bets unless a higher 豹子 appears.
+  - Special case: five `1`s (wilds) count as `7个1` — the strongest possible 豹子.
